@@ -127,3 +127,17 @@ INSERT INTO matricula (numero_matricula, cpf, nome, comprovante_residencia, data
 ('MAT2026001', '444.444.444-44', 'Pedro Santos', 'comprovantes/pedro.pdf', '2026-01-10 09:00:00', 'Ativa', 1),
 ('MAT2026002', '555.555.555-55', 'Julia Costa', 'comprovantes/julia.pdf', '2026-01-11 10:00:00', 'Ativa', 2),
 ('MAT2026003', '666.666.666-66', 'Lucas Oliveira', 'comprovantes/lucas.pdf', '2026-01-12 11:00:00', 'Ativa', 3);
+
+CREATE TABLE turma_disciplina_professor (
+    id_turma SERIAL PRIMARY KEY,
+    id_disciplina BIGINT,
+    id_professor BIGINT,
+    FOREIGN KEY (id_turma) REFERENCES turma(id_turma),
+    FOREIGN KEY (id_disciplina) REFERENCES disciplina(id_disciplina),
+    FOREIGN KEY (id_professor) REFERENCES professor(id_professor)
+);
+
+INSERT INTO turma_disciplina_professor (id_disciplina, id_professor) VALUES
+(1, 1),
+(2, 2),
+(3, 3);
