@@ -29,7 +29,7 @@ INSERT INTO responsavel (nome, cpf, telefone, email) VALUES
 
 CREATE TABLE professor (
     id_professor SERIAL PRIMARY KEY,
-    data VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) NOT NULL,
     data_nascimento DATE,
     email VARCHAR(255),
